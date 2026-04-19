@@ -1,43 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>一分为二</title>
-  <link rel="stylesheet" href="./style.css">
+  <!-- 手机适配 👇 这行是关键 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>糖果分组小游戏</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="game-shell">
-    <section class="hud">
-      <div>
-        <p class="eyebrow">小游戏</p>
-        <h1>一分为二</h1>
-        <p id="instructionText" class="instruction">在桌面区域拖动棍子，把糖果分成数量相等的几份。</p>
-      </div>
-      <div class="status-card">
-        <p id="statusText">拖动屏幕开始划线</p>
-        <p id="levelText" class="level-text">正在加载关卡</p>
-        <p id="timerText" class="level-text">剩余时间：--</p>
-        <button id="resetButton" type="button">重新摆放糖果</button>
-      </div>
-    </section>
+  <div id="scene">
+    <div id="table"></div>
+    <div id="candiesLayer"></div>
+    <div id="sticksLayer"></div>
+    <div id="countsLayer"></div>
+    
+    <div id="ui">
+      <div id="levelText"></div>
+      <div id="instructionText"></div>
+      <div id="timerText"></div>
+      <div id="statusText"></div>
+      <button id="resetButton">重新开始</button>
+    </div>
+  </div>
 
-    <section class="scene-wrap">
-      <div id="scene" class="scene" aria-label="一分为二游戏场景">
-        <img class="background" src="./背景.png" alt="">
-        <img class="child child-top" src="./孩子1.png" alt="">
-        <img class="child child-right" src="./孩子2.png" alt="">
-        <img class="child child-bottom" src="./孩子3.png" alt="">
-        <img class="child child-left" src="./孩子4.png" alt="">
-        <img id="table" class="table" src="./桌子.png" alt="桌子">
-
-        <div id="candiesLayer" class="candies-layer" aria-hidden="true"></div>
-        <div id="sticksLayer" class="sticks-layer" aria-hidden="true"></div>
-        <div id="countsLayer" class="counts-layer" aria-hidden="true"></div>
-      </div>
-    </section>
-  </main>
-
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
