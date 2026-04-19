@@ -196,7 +196,7 @@ function renderCandies() {
     const node = document.createElement("img");
     node.className = "candy";
     node.src = candy.image;
-    node.alt = `糖果 ${index + 1}`;
+    alt = `糖果 ${index + 1}`;
     node.style.left = `${candy.x * 100}%`;
     node.style.top = `${candy.y * 100}%`;
     node.style.setProperty("--rotation", candy.rotation);
@@ -560,13 +560,11 @@ function finishStick(event) {
   commitStickAndCheck();
 }
 
-// ==== 电脑 + 手机 双端兼容核心代码 ====
 scene.addEventListener("pointerdown", beginStick);
 scene.addEventListener("pointermove", moveStick);
 window.addEventListener("pointerup", finishStick);
 window.addEventListener("pointercancel", finishStick);
 
-// 禁止手机浏览器滑动页面
 document.body.addEventListener("touchmove", (e) => {
   e.preventDefault();
 }, { passive: false });
